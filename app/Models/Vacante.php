@@ -9,6 +9,9 @@ class Vacante extends Model
 {
     use HasFactory;
 
+    //protected $dates = ['ultimo_dia'];
+    protected $casts = [ 'ultimo_dia'=>'date'];
+
     // Campos que se agregaran
     protected $fillable = [
         'titulo', 
@@ -20,4 +23,14 @@ class Vacante extends Model
         'imagen', 
         'user_id'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function salario()
+    {
+        return $this->belongsTo(Salario::class);
+    }
 }

@@ -30,7 +30,7 @@ class CrearVacante extends Component
         'imagen' => 'required|image|max:1024',
     ];
 
-    public function CrearVacante()
+    public function crearVacante()
     {
         $datos = $this->validate();
 
