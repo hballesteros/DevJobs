@@ -41,4 +41,10 @@
         </div>
     @endguest
 
+    @auth
+        @cannot('create', App\Model\Vacante::class)
+            <livewire:postular-vacante :vacante="$vacante" />
+        @endcannot
+    @endauth
+    
 </div>
